@@ -1,0 +1,33 @@
+channels:
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - python=3.10.13
+  - verkko=1.4.1
+  - hifiasm=0.19.8
+  - minimap2=2.26
+  - winnowmap=2.03
+  # RepeatMasker. Bug in later versions
+  - repeatmasker=4.1.0
+
+  # HumAS-HMMER has no conda recipe. Do manually.
+  # * Apparently only a bash script?
+  - hmmer=3.4
+  # Need awk script
+  # * https://github.com/enigene/hmmertblout2bed
+  - bedops=2.4.41
+
+  - stringdecomposer=1.1.2
+  # Flagger will require cromwell to run WDL. Do manually.
+  # NucFreq has no conda recipe. Do manually. Both R and python
+  # * https://github.com/mrvollger/NucFreq
+  - merqury=1.3
+  # Stainedglass. Do manually.
+  # Snakemake. Older version due to dependency conflict with stringdecomposer.
+  - snakemake=7.32.4
+  - pip
+  - pip:
+    - pandas
+    - matplotlib
+    - numpy
