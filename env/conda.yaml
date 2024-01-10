@@ -13,9 +13,8 @@ dependencies:
 
   # HumAS-HMMER has no conda recipe. Do manually.
   # * Apparently only a bash script?
+  # https://github.com/fedorrik/HumAS-HMMER_for_AnVIL
   - hmmer=3.4
-  # Need awk script
-  # * https://github.com/enigene/hmmertblout2bed
   - bedops=2.4.41
 
   - stringdecomposer=1.1.2
@@ -26,6 +25,8 @@ dependencies:
   # Stainedglass. Do manually.
   # Snakemake. Older version due to dependency conflict with stringdecomposer.
   - snakemake=7.32.4
+  - rust
+  - rustybam
   - pip
   - pip:
     - pandas
